@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhrnrvs4f3slq"]
+
+[ext_resource type="Script" path="res://src/VRSimulation.gd" id="1_74b2w"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ke67i"]
+
+[node name="player" type="Node3D"]
+script = ExtResource("1_74b2w")
+mouse_sensitivity = 0.005
+
+[node name="Head" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="Head"]
+current = true
+
+[node name="RightHand" type="XRController3D" parent="Head"]
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/RightHand"]
+transform = Transform3D(0.608116, 0, 0, 0, -0.231686, -0.562252, 0, 0.562252, -0.231686, 1.9103, 0, -2.63104)
+mesh = SubResource("CapsuleMesh_ke67i")
+
+[node name="LeftHand" type="XRController3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/LeftHand"]
+transform = Transform3D(0.608116, 0, 0, 0, -0.231686, -0.562252, 0, 0.562252, -0.231686, 1.9103, 0, -2.63104)
+mesh = SubResource("CapsuleMesh_ke67i")
