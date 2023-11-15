@@ -1,29 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhrnrvs4f3slq"]
+[gd_scene load_steps=5 format=3 uid="uid://bhrnrvs4f3slq"]
 
 [ext_resource type="Script" path="res://src/VRSimulation.gd" id="1_74b2w"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ke67i"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_652j3"]
+albedo_color = Color(0.909804, 0.494118, 0, 1)
+clearcoat_enabled = true
+clearcoat = 0.0
+heightmap_scale = 4.64
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrsdp"]
+albedo_color = Color(0.278431, 0.572549, 0.803922, 1)
+
 [node name="player" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73756, 0)
 script = ExtResource("1_74b2w")
 mouse_sensitivity = 0.005
 
 [node name="Head" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013909, 0.69002, 0.31717)
 current = true
 
 [node name="RightHand" type="XRController3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2.5)
 tracker = &"right_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/RightHand"]
-transform = Transform3D(0.608116, 0, 0, 0, -0.231686, -0.562252, 0, 0.562252, -0.231686, 1.9103, 0, -2.63104)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_ke67i")
+surface_material_override/0 = SubResource("StandardMaterial3D_652j3")
 
 [node name="LeftHand" type="XRController3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2.5)
 tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/LeftHand"]
-transform = Transform3D(0.608116, 0, 0, 0, -0.231686, -0.562252, 0, 0.562252, -0.231686, 1.9103, 0, -2.63104)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_jrsdp")
 mesh = SubResource("CapsuleMesh_ke67i")
