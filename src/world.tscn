@@ -21,7 +21,7 @@ albedo_texture = ExtResource("3_beytj")
 script = ExtResource("1_q4c06")
 
 [node name="player" parent="." instance=ExtResource("1_dnfyn")]
-transform = Transform3D(-0.999238, 0, 0.039033, 0, 1, 0, -0.039033, 0, -0.999238, 0, 2, -33)
+transform = Transform3D(-0.999238, 0, 0.039033, 0, 1, 0, -0.039033, 0, -0.999238, -20.5605, -3.44262, -33)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
@@ -128,9 +128,6 @@ skeleton = NodePath("../../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(9.98205, 0, 0, 0, 9.98205, 0, 0, 0, 9.98205, 0, 1.44609, 0)
 shape = SubResource("BoxShape3D_gf52h")
-
-[node name="View" type="Camera3D" parent="."]
-transform = Transform3D(-0.914937, 0.265467, -0.304004, 0.0904967, 0.868994, 0.486476, 0.393321, 0.417584, -0.819099, -4.90926, 6.31845, -11.7942)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

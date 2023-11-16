@@ -25,16 +25,16 @@ func _process(delta):
 	
 	# Left Hand
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		left_hand.global_transform.origin.z = -hand_thrust_distance
+		left_hand.transform.origin.z = -hand_thrust_distance
 	else:
 		# Lerp the hand back to the starting position
-		var current_position = left_hand.global_transform.origin
-		left_hand.global_transform.origin.z = lerp(current_position.z, 0.0, delta * hand_reset_speed)
+		var current_position = left_hand.transform.origin
+		left_hand.transform.origin.z = lerp(current_position.z, 0.0, delta * hand_reset_speed)
 		
 	# Right Hand
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		right_hand.global_transform.origin.z = -hand_thrust_distance
+		right_hand.transform.origin.z = -hand_thrust_distance
 	else:
 		# Lerp the hand back to the starting position
-		var current_position = right_hand.global_transform.origin
-		right_hand.global_transform.origin.z = lerp(current_position.z, 0.0, delta * hand_reset_speed)
+		var current_position = right_hand.transform.origin
+		right_hand.transform.origin.z = lerp(current_position.z, 0.0, delta * hand_reset_speed)

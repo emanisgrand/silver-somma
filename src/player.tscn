@@ -14,7 +14,7 @@ heightmap_scale = 4.64
 albedo_color = Color(0.278431, 0.572549, 0.803922, 1)
 
 [node name="player" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73756, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30416, 0)
 script = ExtResource("1_74b2w")
 mouse_sensitivity = 0.005
 
